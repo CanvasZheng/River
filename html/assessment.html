@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的收获 - 多人过河巧安排</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/assessment.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">🚣 多人过河巧安排</h1>
+            <ul class="nav-menu">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="activity1.html">问题分解</a></li>
+                <li><a href="activity2.html">流程图设计</a></li>
+                <li><a href="extension.html">拓展提升</a></li>
+                <li><a href="assessment.html" class="active">我的收获</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="page-header">
+            <h2>🎓 我的收获</h2>
+            <p>让我们一起来检验学习成果吧！</p>
+        </section>
+
+        <!-- 第一部分：测试题 -->
+        <section class="test-section">
+            <h3>📝 第一部分：知识检测（共12分）</h3>
+            <p class="section-desc">每题2分，认真思考后选择答案，完成后点击提交查看结果。</p>
+            
+            <div class="test-container">
+                <div class="question-item">
+                    <div class="question-content">
+                        <h4>1. 把大问题分解成小问题的方法有什么好处？</h4>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="A"> A. 让问题变得更复杂</label>
+                            <label><input type="radio" name="q1" value="B"> B. 让复杂的任务变得简单易懂</label>
+                            <label><input type="radio" name="q1" value="C"> C. 增加解决问题的时间</label>
+                            <label><input type="radio" name="q1" value="D"> D. 没有任何好处</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback1"></div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-content">
+                        <h4>2. 在10人过河问题中，解决问题的关键是什么？</h4>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="A"> A. 让所有人一起过河</label>
+                            <label><input type="radio" name="q2" value="B"> B. 找到让1个成年人过河的方法</label>
+                            <label><input type="radio" name="q2" value="C"> C. 让2个少年一直划船</label>
+                            <label><input type="radio" name="q2" value="D"> D. 增加船的数量</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback2"></div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-content">
+                        <h4>3. 流程图中的菱形符号表示什么？</h4>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="A"> A. 开始或结束</label>
+                            <label><input type="radio" name="q3" value="B"> B. 处理步骤</label>
+                            <label><input type="radio" name="q3" value="C"> C. 判断条件</label>
+                            <label><input type="radio" name="q3" value="D"> D. 流程方向</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback3"></div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-content">
+                        <h4>4. 循环结构可以让相同的步骤重复执行。（判断题）</h4>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="A"> A. 正确</label>
+                            <label><input type="radio" name="q4" value="B"> B. 错误</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback4"></div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-content">
+                        <h4>5. 让1个成年人过河需要几个步骤？</h4>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="A"> A. 2个步骤</label>
+                            <label><input type="radio" name="q5" value="B"> B. 4个步骤</label>
+                            <label><input type="radio" name="q5" value="C"> C. 6个步骤</label>
+                            <label><input type="radio" name="q5" value="D"> D. 8个步骤</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback5"></div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-content">
+                        <h4>6. 如果把流程图中"将过河人数=10"改为"将过河人数=20"，可以解决20个成年人过河的问题吗？</h4>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="A"> A. 可以</label>
+                            <label><input type="radio" name="q6" value="B"> B. 不可以</label>
+                            <label><input type="radio" name="q6" value="C"> C. 需要修改其他步骤</label>
+                            <label><input type="radio" name="q6" value="D"> D. 需要增加少年数量</label>
+                        </div>
+                    </div>
+                    <div class="feedback" id="feedback6"></div>
+                </div>
+            </div>
+
+            <div class="test-actions">
+                <button class="submit-btn" onclick="submitTest()">提交答案</button>
+                <button class="retry-btn" onclick="retryTest()" style="display:none;">重新做题</button>
+            </div>
+
+            <div id="testResult" class="test-result"></div>
+        </section>
+
+        <!-- 第二部分：自我评价 -->
+        <section class="self-evaluation">
+            <h3>⭐ 第二部分：学习目标自我评价</h3>
+            <p class="section-desc">请根据自己的学习情况，为每个学习目标打星评价。</p>
+            
+            <div class="evaluation-container">
+                <div class="eval-item">
+                    <div class="eval-goal">
+                        <p>1. 掌握把一个大问题分解成小问题的方法</p>
+                    </div>
+                    <div class="star-rating" data-goal="1">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                </div>
+
+                <div class="eval-item">
+                    <div class="eval-goal">
+                        <p>2. 通过复现解决小问题的方案来解决大问题</p>
+                    </div>
+                    <div class="star-rating" data-goal="2">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="evalResult" class="eval-result"></div>
+        </section>
+
+        <!-- 第三部分：证书生成 -->
+        <section class="certificate-section">
+            <h3>🏆 第三部分：学业完成证书</h3>
+            <p class="section-desc">完成测试并获得满分12分，且自我评价达到五星，即可生成专属证书！</p>
+            
+            <div id="certificateArea" class="certificate-area">
+                <div class="certificate-prompt">
+                    <p>📋 请先完成上面的测试和自我评价</p>
+                    <p>✅ 测试得分：<span id="scoreDisplay">0</span> / 12分</p>
+                    <p>⭐ 自评星级：<span id="starDisplay">未评价</span></p>
+                </div>
+
+                <div id="certificateForm" class="certificate-form" style="display:none;">
+                    <h4>🎉 恭喜你达到要求！请输入姓名生成证书：</h4>
+                    <input type="text" id="studentName" placeholder="请输入你的姓名" maxlength="10">
+                    <button class="generate-btn" onclick="generateCertificate()">生成证书</button>
+                </div>
+
+                <div id="certificateDisplay" class="certificate-display" style="display:none;">
+                    <div id="certificate" class="certificate">
+                        <img class="cert-bg-image" src="../images/background.jpg" alt="">
+                        <div class="cert-inner">
+                            <h2 class="cert-title">学业完成证书</h2>
+                            <div class="cert-content">
+                                <p class="cert-student">同学：<span id="certName"></span></p>
+                                <p class="cert-text">在《第24课 多人过河巧安排》的学习中</p>
+                                <p class="cert-text">表现优异，成绩突出</p>
+                                <p class="cert-text">掌握了问题分解的方法</p>
+                                <p class="cert-text">特发此证，以资鼓励！</p>
+                                <div class="cert-footer">
+                                    <p class="cert-date">颁发日期：<span id="certDate"></span></p>
+                                    <img class="cert-stamp" src="../images/jiang.png" alt="印章">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="download-btn" onclick="downloadCertificate()">📥 下载证书</button>
+                        <p class="cert-note">💡 提示：如需完整版证书，请使用截图功能（Ctrl+Shift+X）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 小学信息科技课程 | 第24课</p>
+    </footer>
+
+    <script src="../js/html2canvas.min.js"></script>
+    <script src="../js/assessment.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流程图设计 - 多人过河巧安排</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/activity2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">🚣 多人过河巧安排</h1>
+        </div>
+    </nav>
+
+        <section class="interactive-flowchart">
+            <h3>🎮 互动体验：跟着流程图过河</h3>
+            <div class="interactive-container">
+                <div class="dual-display">
+                    <!-- 左侧：过河动画 -->
+                    <div class="animation-panel">
+                        <h4>过河动画演示</h4>
+                        <div class="sim-info">
+                            <p>待过河人数：<span id="remainingPeople" class="highlight">10</span></p>
+                            <p>当前步骤：<span id="currentStep" class="highlight">开始</span></p>
+                        </div>
+                        
+                        <div class="sim-scene">
+                            <div class="sim-shore left">
+                                <h5>左岸</h5>
+                                <div id="simLeft" class="sim-people"></div>
+                            </div>
+                            
+                            <div class="sim-river">
+                                <div id="simBoat" class="sim-boat">
+                                    <img src="../images/boat.png" alt="空船">
+                                </div>
+                            </div>
+                            
+                            <div class="sim-shore right">
+                                <h5>右岸</h5>
+                                <div id="simRight" class="sim-people"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="sim-controls">
+                            <button class="sim-btn" onclick="startSimulation()">🎬 自动演示</button>
+                            <button class="sim-btn" onclick="resetSimulation()">🔄 重新开始</button>
+                        </div>
+                        
+                        <div id="simMessage" class="sim-message">点击"自动演示"按钮开始演示</div>
+                    </div>
+                    
+                    <!-- 右侧：流程图高亮 -->
+                    <div class="flowchart-panel">
+                        <h4>流程图同步演示</h4>
+                        <div class="flowchart-highlight-container">
+                            <img id="flowchartImage" src="../images/flowchart-start.png" alt="流程图" class="flowchart-bg">
+                        </div>
+                        <p class="flowchart-hint">💡 黄色高亮显示当前执行的步骤</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <footer>
+        <p>© 2024 小学信息科技课程 | 第24课</p>
+    </footer>
+
+    <script src="../js/activity2.js"></script>
+</body>
+</html>

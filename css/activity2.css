@@ -1,0 +1,655 @@
+/* 活动2特定样式 */
+
+.activity-header {
+    background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.activity-header h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.activity-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    background: rgba(255,255,255,0.3);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* 流程图介绍 */
+.flowchart-intro {
+    margin: 30px 0;
+}
+
+.flowchart-intro h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.intro-box {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.intro-box > p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.symbol-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.symbol {
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    min-height: 60px;
+}
+
+.symbol.start-end {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50px;
+    width: 150px;
+    padding: 15px;
+}
+
+.symbol.process {
+    background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+    border-radius: 5px;
+    width: 150px;
+    padding: 15px;
+}
+
+.symbol.decision {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.symbol.arrow {
+    color: #333;
+    font-size: 40px;
+}
+
+.symbol-card p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* 流程图展示 */
+.flowchart-display {
+    margin: 30px 0;
+}
+
+.flowchart-display h3 {
+    color: #FF6B6B;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.flowchart-container {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 30px;
+    border-radius: 15px;
+    overflow-x: auto;
+}
+
+.flowchart-image {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flowchart-img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.flowchart-img:hover {
+    transform: scale(1.05);
+}
+
+.click-hint {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 图片放大模态框 */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.image-modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: #ff6b6b;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 互动流程图 */
+.interactive-flowchart {
+    margin: 30px 0;
+}
+
+.interactive-flowchart h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.interactive-container {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.dual-display {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 20px;
+}
+
+.animation-panel,
+.flowchart-panel {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.animation-panel h4,
+.flowchart-panel h4 {
+    font-size: 20px;
+    color: #4ECDC4;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sim-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sim-info p {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #FF6B6B;
+    font-size: 20px;
+}
+
+.sim-scene {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 15px;
+    min-height: 200px;
+}
+
+.sim-shore {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 160px;
+}
+
+.sim-shore.left {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.sim-shore.right {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.sim-shore h5 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.sim-people {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    min-height: 120px;
+    align-items: flex-start;
+}
+
+.sim-person {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.sim-person img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.sim-person-label {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,107,107,0.9);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.sim-river {
+    flex: 0.75;
+    background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+    min-height: 160px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sim-boat {
+    position: absolute;
+    top: 50%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    transition: left 1s ease-in-out;
+    z-index: 2;
+}
+
+.sim-boat.at-right {
+    left: 72%;
+}
+
+.sim-boat img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.sim-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.sim-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sim-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.sim-message {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 流程图高亮面板 */
+.flowchart-highlight-container {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    margin: 0;
+}
+
+.flowchart-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.flowchart-hint {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+    .dual-display {
+        grid-template-columns: 1fr;
+    }
+    
+    .flowchart-panel {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .sim-scene {
+        flex-direction: column;
+        gap: 15px;
+        min-height: auto;
+    }
+    
+    .sim-shore, .sim-river {
+        width: 100%;
+        min-height: 120px;
+    }
+    
+    .sim-person {
+        font-size: 25px;
+    }
+    
+    .sim-boat {
+        font-size: 35px;
+    }
+}
+
+/* 思考部分 */
+.thinking-section {
+    margin: 30px 0;
+}
+
+.thinking-section h3 {
+    color: #FF6B6B;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.thinking-cards {
+    display: grid;
+    gap: 20px;
+}
+
+.think-question {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.think-question h4 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.think-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 15px 0;
+}
+
+.think-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.thinking-answer {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.thinking-answer.show {
+    display: block;
+}
+
+.thinking-answer p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.thinking-answer ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.thinking-answer li {
+    font-size: 18px;
+    color: #333;
+    line-height: 2;
+    margin: 8px 0;
+}
+
+/* 总结 */
+.key-points {
+    margin: 30px 0;
+}
+
+.key-points h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.key-point {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.point-icon {
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.key-point p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .sim-scene {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .sim-shore, .sim-river {
+        width: 100%;
+    }
+    
+    .flowchart-container {
+        overflow-x: scroll;
+    }
+    
+    .flow-split {
+        flex-direction: column;
+    }
+}
+/* 总结部分样式 
+*/
+.summary-section {
+    margin: 40px 0;
+}
+
+.summary-section h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.summary-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.summary-icon {
+    font-size: 35px;
+    flex-shrink: 0;
+}
+
+.summary-item p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.summary-item strong {
+    color: #FF6B6B;
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0E5 100%);
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+/* key-point样式（兼容旧的类名） */
+.key-point p strong {
+    color: #FF6B6B;
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0E5 100%);
+    padding: 2px 8px;
+    border-radius: 5px;
+}

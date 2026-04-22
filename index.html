@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第24课 多人过河巧安排</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">🚣 多人过河巧安排</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="html/activity1.html">探索方法</a></li>
+                <li><a href="html/activity2.html">流程图设计</a></li>
+                <li><a href="html/extension.html">拓展提升</a></li>
+                <li><a href="html/assessment.html">我的收获</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="learning-objectives">
+            <h2>📚 学习目标</h2>
+            <div class="objectives-box">
+                <p><span class="number">1.</span> 尝试把一个大问题分解成小问题来解决，培养解决问题的能力。</p>
+                <p><span class="number">2.</span> 通过复现解决小问题的方案来解决大问题，初步了解规划算法的思想。</p>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <h2>� 情境视频</h2>
+            <p class="video-intro">让我们先来看一段视频，了解今天要学习的问题</p>
+            
+            <div class="video-container">
+                <video id="introVideo" controls poster="images/video-poster.jpg">
+                    <source src="videos/导入视频.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+                <div class="video-controls">
+                    <button class="video-btn" onclick="playVideo()">
+                        <span class="btn-icon">▶️</span> 播放视频
+                    </button>
+                    <button class="video-btn" onclick="pauseVideo()">
+                        <span class="btn-icon">⏸️</span> 暂停
+                    </button>
+                    <button class="video-btn" onclick="restartVideo()">
+                        <span class="btn-icon">🔄</span> 重新播放
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="introduction">
+            <h2>📖 问题情境</h2>
+            <div class="story-box">
+                <p class="story-text">
+                    看完视频，你了解这个问题了吗？让我们一起来分析一下：
+                </p>
+                <p class="story-text">
+                    一支由<strong>10个成年人</strong>组成的探险队要过河，但船很小，每次最多载<strong>2个少年</strong>或<strong>1个成年人</strong>。
+                    这时，他们看到<strong>2个少年</strong>划着1条小船过来，就向少年求助。
+                </p>
+                <p class="story-text highlight-question">
+                    🤔 如果2个少年与探险队成员都能划船过河，这支探险队如何过河？
+                </p>
+            </div>
+        </section>
+
+        <div class="next-section">
+            <p>看完视频，了解了问题情境，让我们一起来探索解决方法吧！</p>
+            <a href="html/activity1.html" class="next-btn">
+                <span>开始探索</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 小学信息科技课程 | 第24课 多人过河巧安排</p>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

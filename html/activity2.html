@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流程图设计 - 多人过河巧安排</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/activity2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">🚣 多人过河巧安排</h1>
+            <ul class="nav-menu">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="activity1.html">问题分解</a></li>
+                <li><a href="activity2.html" class="active">流程图设计</a></li>
+                <li><a href="extension.html">拓展提升</a></li>
+                <li><a href="assessment.html">我的收获</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="activity-header">
+            <h2>🎯 学习活动2：用流程图梳理过河的过程</h2>
+            <p class="activity-desc">只需要1个成年人过河就能解决多人过河的问题，循环10次，就可以把10个成年人送到对岸。</p>
+            <p class="activity-desc">下面用流程图梳理解决这个问题的过程。</p>
+        </section>
+
+        <section class="flowchart-intro">
+            <h3>📊 什么是流程图？</h3>
+            <div class="intro-box">
+                <p>流程图是用图形符号来表示解决问题步骤的一种方法。它可以帮助我们清晰地看到整个过程。</p>
+                <div class="symbols-grid">
+                    <div class="symbol-card">
+                        <div class="symbol start-end">开始/结束</div>
+                        <p>椭圆形表示开始或结束</p>
+                    </div>
+                    <div class="symbol-card">
+                        <div class="symbol process">处理过程</div>
+                        <p>矩形表示处理步骤</p>
+                    </div>
+                    <div class="symbol-card">
+                        <div class="symbol decision">判断</div>
+                        <p>菱形表示判断条件</p>
+                    </div>
+                    <div class="symbol-card">
+                        <div class="symbol arrow">→</div>
+                        <p>箭头表示流程方向</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flowchart-display">
+            <h3>🎨 10人过河流程图</h3>
+            <div class="flowchart-container">
+                <div class="flowchart-image">
+                    <img src="../images/多人过河流程图.png" alt="多人过河流程图" class="flowchart-img" onclick="openImageModal(this)">
+                    <p class="click-hint">💡 点击图片可放大查看</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片放大模态框 -->
+        <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+
+        <section class="interactive-flowchart">
+            <h3>🎮 互动体验：跟着流程图过河</h3>
+            <div class="interactive-container">
+                <div class="dual-display">
+                    <!-- 左侧：过河动画 -->
+                    <div class="animation-panel">
+                        <h4>过河动画演示</h4>
+                        <div class="sim-info">
+                            <p>待过河人数：<span id="remainingPeople" class="highlight">10</span></p>
+                            <p>当前步骤：<span id="currentStep" class="highlight">开始</span></p>
+                        </div>
+                        
+                        <div class="sim-scene">
+                            <div class="sim-shore left">
+                                <h5>左岸</h5>
+                                <div id="simLeft" class="sim-people"></div>
+                            </div>
+                            
+                            <div class="sim-river">
+                                <div id="simBoat" class="sim-boat">
+                                    <img src="../images/boat.png" alt="空船">
+                                </div>
+                            </div>
+                            
+                            <div class="sim-shore right">
+                                <h5>右岸</h5>
+                                <div id="simRight" class="sim-people"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="sim-controls">
+                            <button class="sim-btn" onclick="startSimulation()">🎬 自动演示</button>
+                            <button class="sim-btn" onclick="resetSimulation()">🔄 重新开始</button>
+                        </div>
+                        
+                        <div id="simMessage" class="sim-message">点击"自动演示"按钮开始演示</div>
+                    </div>
+                    
+                    <!-- 右侧：流程图高亮 -->
+                    <div class="flowchart-panel">
+                        <h4>流程图同步演示</h4>
+                        <div class="flowchart-highlight-container">
+                            <img id="flowchartImage" src="../images/flowchart-start.png" alt="流程图" class="flowchart-bg">
+                        </div>
+                        <p class="flowchart-hint">💡 黄色高亮显示当前执行的步骤</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="thinking-section">
+            <h3>🤔 进一步思考</h3>
+            <div class="thinking-cards">
+                <div class="think-question">
+                    <h4>问题1：如果是20个成年人过河就需要更多次过河吗？</h4>
+                    <button class="think-btn" onclick="showThinking(1)">💡 点击查看分析</button>
+                    <div id="thinking1" class="thinking-answer">
+                        <p>是的！如果修改流程图中的初始值，把"将过河人数=10"改为"将过河人数=20"，就可以解决20个成年人过河的问题。</p>
+                        <p>这就是循环的威力：相同的步骤重复执行，就能解决更大规模的问题！</p>
+                    </div>
+                </div>
+                
+                <div class="think-question">
+                    <h4>问题2：日常生活中还有哪些问题可以用循环来解决？</h4>
+                    <button class="think-btn" onclick="showThinking(2)">💡 点击查看示例</button>
+                    <div id="thinking2" class="thinking-answer">
+                        <p>生活中有很多循环的例子：</p>
+                        <ul>
+                            <li>🍽️ 洗碗：重复"拿起碗→清洗→放好"的步骤，直到所有碗都洗完</li>
+                            <li>📚 做作业：重复"读题→思考→解答"的步骤，直到所有题目都完成</li>
+                            <li>🌳 种树：重复"挖坑→放树苗→填土→浇水"的步骤，直到种完所有树</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="key-points">
+            <h3>📌 本节总结</h3>
+            <div class="summary-box">
+                <div class="key-point">
+                    <span class="point-icon">🔑</span>
+                    <p><strong>流程图</strong>可以<strong>清晰地表示</strong>解决问题的步骤和过程</p>
+                </div>
+                <div class="key-point">
+                    <span class="point-icon">🔑</span>
+                    <p><strong>循环结构</strong>可以让相同的步骤<strong>重复执行</strong>，解决批量问题</p>
+                </div>
+                <div class="key-point">
+                    <span class="point-icon">🔑</span>
+                    <p><strong>判断条件</strong>决定了<strong>循环何时结束</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-section">
+            <p>掌握了流程图，让我们挑战更难的问题吧！</p>
+            <a href="extension.html" class="next-btn">挑战拓展 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 小学信息科技课程 | 第24课</p>
+    </footer>
+
+    <script src="../js/activity2.js"></script>
+</body>
+</html>

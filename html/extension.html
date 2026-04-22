@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拓展提升 - 多人过河巧安排</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/extension.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">🚣 多人过河巧安排</h1>
+            <ul class="nav-menu">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="activity1.html">问题分解</a></li>
+                <li><a href="activity2.html">流程图设计</a></li>
+                <li><a href="extension.html" class="active">拓展提升</a></li>
+                <li><a href="assessment.html">我的收获</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="activity-header">
+            <h2>🌟 拓展与提升：猎人过河问题</h2>
+            <p class="activity-desc">有一位猎人带着一只羊、一头狼和一筐白菜过河，但船很小，每次只能带一样东西。猎人不在时，狼会吃羊，羊会吃白菜。</p>
+            <p class="activity-desc">请问猎人怎样才能把狼、羊、白菜都安全运到对岸？</p>
+        </section>
+
+        <section class="problem-intro">
+            <h3>🎯 问题分析</h3>
+            <div class="intro-content">
+                <div class="constraint-box">
+                    <h4>⚠️ 约束条件</h4>
+                    <ul>
+                        <li>🚣 船很小，每次只能载猎人和一样东西（或猎人独自过河）</li>
+                        <li>🐺 狼会吃羊（猎人不在时）</li>
+                        <li>🐑 羊会吃白菜（猎人不在时）</li>
+                        <li>✅ 猎人在场时，所有东西都安全</li>
+                    </ul>
+                </div>
+                
+                <div class="thinking-guide">
+                    <h4>💭 思考提示</h4>
+                    <p>这是另一个经典的过河问题。关键是找到正确的顺序，避免危险的组合。</p>
+                    <button class="hint-btn" onclick="showHint()">💡 需要提示吗？</button>
+                    <div id="hintBox" class="hint-box">
+                        <p>🔍 提示：</p>
+                        <ul>
+                            <li>想想哪两样东西可以单独留在一起？</li>
+                            <li>狼和白菜可以单独在一起吗？</li>
+                            <li>猎人可能需要把某样东西带回来...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-game">
+            <h3>🎮 互动游戏：帮助猎人过河</h3>
+            <div class="game-area">
+                <div class="game-scene">
+                    <div class="game-shore left">
+                        <h4>左岸</h4>
+                        <div id="leftBank" class="bank-items">
+                            <div class="item hunter" data-item="hunter">🧑‍🌾</div>
+                            <div class="item wolf" data-item="wolf">🐺</div>
+                            <div class="item sheep" data-item="sheep">🐑</div>
+                            <div class="item cabbage" data-item="cabbage">🥬</div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-river">
+                        <div id="gameBoat" class="game-boat">
+                            <div id="boatContent" class="boat-content"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-shore right">
+                        <h4>右岸</h4>
+                        <div id="rightBank" class="bank-items"></div>
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <div class="play-tip">
+                        点击当前这一岸的狼、羊、白菜让它上船过河；需要猎人单独过河时，点击小船。
+                    </div>
+                    <div class="action-buttons">
+                        <button class="reset-btn" onclick="resetGame()">🔄 重新开始</button>
+                    </div>
+                </div>
+                
+                <div id="gameStatus" class="game-status">
+                    <p>步骤数：<span id="stepCount">0</span></p>
+                    <p id="statusMessage">点击岸上的物品过河，或点击小船让猎人单独过河</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-reveal">
+            <h3>📝 解决方案</h3>
+            <div class="solution-content">
+                <p>如果你想看看正确的解决方案，可以点击下面的按钮：</p>
+                <button class="reveal-solution-btn" onclick="revealSolution()">🔓 查看解决方案</button>
+                
+                <div id="solutionSteps" class="solution-steps">
+                    <h4>✅ 正确的过河步骤：</h4>
+                    <div class="solution-layout">
+                        <!-- 左侧：步骤图解 -->
+                        <div class="solution-list">
+                            <div class="solution-step">
+                                <span class="step-num">1</span>
+                                <div class="step-content">
+                                    <p>猎人带羊到右岸（狼和白菜留在左岸）</p>
+                                    <div class="step-visual">
+                                        <div class="visual-bank">
+                                            <span class="visual-label">左岸</span>
+                                            <img src="../images/wolf.png" alt="狼" class="visual-item">
+                                            <img src="../images/cabbage.png" alt="白菜" class="visual-item">
+                                        </div>
+                                        <div class="visual-boat">
+                                            <img src="../images/boat-hunter-sheep.png" alt="猎人带羊" class="boat-img">
+                                            <span class="arrow">→</span>
+                                        </div>
+                                        <div class="visual-bank">
+                                            <span class="visual-label">右岸</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-step">
+                                <span class="step-num">2</span>
+                                <div class="step-content">
+                                    <p>猎人独自返回左岸</p>
+                                    <div class="step-visual">
+                                        <div class="visual-bank">
+                                            <span class="visual-label">左岸</span>
+                                            <img src="../images/wolf.png" alt="狼" class="visual-item">
+                                            <img src="../images/cabbage.png" alt="白菜" class="visual-item">
+                                        </div>
+                                        <div class="visual-boat">
+                                            <span class="arrow">←</span>
+                                            <img src="../images/boat-hunte.png" alt="猎人" class="boat-img">
+                                        </div>
+                                        <div class="visual-bank">
+                                            <span class="visual-label">右岸</span>
+                                            <img src="../images/sheep.png" alt="羊" class="visual-item">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-step">
+                                <span class="step-num">3</span>
+                                <div class="step-content">
+                                    <p>猎人带狼到右岸</p>
+                                    <div class="step-visual">
+                                        <div class="visual-bank">
+                                            <span class="visual-label">左岸</span>
+                                            <img src="../images/cabbage.png" alt="白菜" class="visual-item">
+                                        </div>
+                                        <div class="visual-boat">
+                                            <img src="../images/boat-hunter-wolf.png" alt="猎人带狼" class="boat-img">
+                                            <span class="arrow">→</span>
+                                        </div>
+                                        <div class="visual-bank">
+                                            <span class="visual-label">右岸</span>
+                                            <img src="../images/sheep.png" alt="羊" class="visual-item">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-step">
+                                <span class="step-num">4</span>
+                                <div class="step-content">
+                                    <p>猎人带羊返回左岸（避免狼吃羊）</p>
+                                    <div class="step-visual">
+                                        <div class="visual-bank">
+                                            <span class="visual-label">左岸</span>
+                                            <img src="../images/cabbage.png" alt="白菜" class="visual-item">
+                                        </div>
+                                        <div class="visual-boat">
+                                            <span class="arrow">←</span>
+                                            <img src="../images/boat-hunter-sheep.png" alt="猎人带羊" class="boat-img">
+                                        </div>
+                                        <div class="visual-bank">
+                                            <span class="visual-label">右岸</span>
+                                            <img src="../images/wolf.png" alt="狼" class="visual-item">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-step">
+                                <span class="step-num">5</span>
+                                <div class="step-content">
+                                    <p>猎人带白菜到右岸（狼和白菜可以在一起）</p>
+                                    <div class="step-visual">
+                                        <div class="visual-bank">
+                                            <span class="visual-label">左岸</span>
+                                            <img src="../images/sheep.png" alt="羊" class="visual-item">
+                                        </div>
+                                        <div class="visual-boat">
+                                            <img src="../images/boat-hunter-cabbage.png" alt="猎人带白菜" class="boat-img">
+                                            <span class="arrow">→</span>
+                                        </div>
+                                        <div class="visual-bank">
+                                            <span class="visual-label">右岸</span>
+                                            <img src="../images/wolf.png" alt="狼" class="visual-item">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-step">
+                                <span class="step-num">6</span>
+                                <div class="step-content">
+                                    <p>猎人独自返回左岸</p>
+                                    <div class="step-visual">
+                                        <div class="visual-bank">
+                                            <span class="visual-label">左岸</span>
+                                            <img src="../images/sheep.png" alt="羊" class="visual-item">
+                                        </div>
+                                        <div class="visual-boat">
+                                            <span class="arrow">←</span>
+                                            <img src="../images/boat-hunte.png" alt="猎人" class="boat-img">
+                                        </div>
+                                        <div class="visual-bank">
+                                            <span class="visual-label">右岸</span>
+                                            <img src="../images/wolf.png" alt="狼" class="visual-item">
+                                            <img src="../images/cabbage.png" alt="白菜" class="visual-item">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-step">
+                                <span class="step-num">7</span>
+                                <div class="step-content">
+                                    <p>猎人带羊到右岸，完成！🎉</p>
+                                    <div class="step-visual">
+                                        <div class="visual-bank">
+                                            <span class="visual-label">左岸</span>
+                                            <span class="empty-text">空</span>
+                                        </div>
+                                        <div class="visual-boat">
+                                            <img src="../images/boat-hunter-sheep.png" alt="猎人带羊" class="boat-img">
+                                            <span class="arrow">→</span>
+                                        </div>
+                                        <div class="visual-bank">
+                                            <span class="visual-label">右岸</span>
+                                            <img src="../images/wolf.png" alt="狼" class="visual-item">
+                                            <img src="../images/cabbage.png" alt="白菜" class="visual-item">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 右侧：关键点 -->
+                        <div class="solution-note">
+                            <h4>🔑 关键点：</h4>
+                            <div class="key-point-item">
+                                <span class="key-icon">✓</span>
+                                <p>狼和白菜可以单独在一起（狼不吃白菜）</p>
+                            </div>
+                            <div class="key-point-item">
+                                <span class="key-icon">✗</span>
+                                <p>羊不能和狼单独在一起，也不能和白菜单独在一起</p>
+                            </div>
+                            <div class="key-point-item">
+                                <span class="key-icon">💡</span>
+                                <p>猎人需要把羊带回来一次，才能安全运送其他物品</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="connection-section">
+            <h3>🔗 与本课的联系</h3>
+            <div class="connection-box">
+                <div class="connection-card">
+                    <h4>🎯 问题分解</h4>
+                    <p>猎人过河问题也需要分解成多个小步骤，每一步都要确保安全。</p>
+                </div>
+                <div class="connection-card">
+                    <h4>🔄 循环思维</h4>
+                    <p>虽然这个问题不是简单的循环，但也体现了重复"选择→过河→检查"的过程。</p>
+                </div>
+                <div class="connection-card">
+                    <h4>🤔 约束条件</h4>
+                    <p>解决问题时必须考虑各种约束条件，这是计算思维的重要组成部分。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="key-points">
+            <h3>📌 本节总结</h3>
+            <div class="summary-box">
+                <div class="key-point">
+                    <span class="point-icon">🔑</span>
+                    <p><strong>复杂问题</strong>需要仔细<strong>分析约束条件</strong></p>
+                </div>
+                <div class="key-point">
+                    <span class="point-icon">🔑</span>
+                    <p>有时需要<strong>"回退"</strong>（把东西带回来）才能找到解决方案</p>
+                </div>
+                <div class="key-point">
+                    <span class="point-icon">🔑</span>
+                    <p><strong>问题分解的方法</strong>可以应用到各种不同的场景</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="next-section">
+            <p>完成了所有学习内容，让我们来检验一下学习成果吧！</p>
+            <a href="assessment.html" class="next-btn">开始测评 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 小学信息科技课程 | 第24课</p>
+    </footer>
+
+    <script src="../js/extension.js"></script>
+</body>
+</html>

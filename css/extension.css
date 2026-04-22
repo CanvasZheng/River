@@ -1,0 +1,749 @@
+/* 拓展页面特定样式 */
+
+.activity-header {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.activity-header h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.activity-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    background: rgba(255,255,255,0.3);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* 问题介绍 */
+.problem-intro {
+    margin: 30px 0;
+}
+
+.problem-intro h3 {
+    color: #FF6B6B;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.constraint-box, .thinking-guide {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.constraint-box h4, .thinking-guide h4 {
+    color: #FF6B6B;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.constraint-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.constraint-box li {
+    font-size: 18px;
+    color: #333;
+    line-height: 2;
+    margin: 10px 0;
+    padding-left: 10px;
+}
+
+.thinking-guide p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.hint-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 15px 0;
+}
+
+.hint-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hint-box {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.hint-box.show {
+    display: block;
+}
+
+.hint-box p {
+    font-size: 18px;
+    color: #FF6B6B;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hint-box ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.hint-box li {
+    font-size: 17px;
+    color: #333;
+    line-height: 2;
+    margin: 8px 0;
+}
+
+/* 互动游戏 */
+.interactive-game {
+    margin: 30px 0;
+}
+
+.interactive-game h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.game-area {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.game-scene {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    min-height: 300px;
+}
+
+.game-shore {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 250px;
+}
+
+.game-shore.left {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.game-shore.right {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.game-shore h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bank-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    min-height: 180px;
+    align-items: flex-start;
+}
+
+.item {
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: bounce 1s ease-in-out;
+}
+
+.item img {
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+/* 猎人 - 最大 */
+.item.hunter img {
+    width: 90px;
+    height: 90px;
+}
+
+/* 狼 - 较大 */
+.item.wolf img {
+    width: 75px;
+    height: 75px;
+}
+
+/* 羊 - 中等 */
+.item.sheep img {
+    width: 65px;
+    height: 65px;
+}
+
+/* 白菜 - 较小 */
+.item.cabbage img {
+    width: 55px;
+    height: 55px;
+}
+
+.item:hover {
+    transform: scale(1.2);
+}
+
+.item.selected {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 10px rgba(255,107,107,0.8));
+}
+
+.game-river {
+    flex: 0.5;
+    background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.game-boat {
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 120px;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+
+.game-boat img {
+    max-width: 180px;
+    max-height: 140px;
+    object-fit: contain;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
+}
+
+.boat-content {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 游戏控制 */
+.game-controls {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.play-tip {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    line-height: 1.8;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 16px 20px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.selection-panel h4 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.item-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.item-btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.item-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.item-btn.selected {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    transform: scale(1.1);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-btn, .reset-btn {
+    padding: 15px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.game-status {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-status p {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#stepCount {
+    font-size: 28px;
+}
+
+/* 解决方案 */
+.solution-reveal {
+    margin: 30px 0;
+}
+
+.solution-reveal h3 {
+    color: #FF6B6B;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.solution-content {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.solution-content > p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.reveal-solution-btn {
+    padding: 15px 40px;
+    font-size: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.reveal-solution-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.solution-steps {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 25px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.solution-steps.show {
+    display: block;
+}
+
+.solution-steps h4 {
+    color: #FF6B6B;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.solution-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.solution-list {
+    margin: 0;
+}
+
+.solution-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.step-num {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content > p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.step-visual {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.visual-bank {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-height: 80px;
+}
+
+.visual-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.visual-item {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+}
+
+.visual-boat {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.boat-img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.arrow {
+    font-size: 24px;
+    color: #4ECDC4;
+    font-weight: bold;
+}
+
+.empty-text {
+    font-size: 14px;
+    color: #999;
+    font-style: italic;
+}
+
+.solution-note {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    padding: 25px;
+    border-radius: 10px;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+}
+
+.solution-note h4 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.key-point-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.key-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.key-point-item p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* 联系部分 */
+.connection-section {
+    margin: 30px 0;
+}
+
+.connection-section h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.connection-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.connection-card {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.connection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.connection-card h4 {
+    color: #FF6B6B;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.connection-card p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* 总结 */
+.key-points {
+    margin: 30px 0;
+}
+
+.key-points h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.key-point {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.point-icon {
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.key-point p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .game-scene {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .game-shore, .game-river {
+        width: 100%;
+    }
+    
+    .intro-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .solution-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .solution-note {
+        position: static;
+        order: -1;
+    }
+    
+    .step-visual {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .visual-boat {
+        flex-direction: column;
+    }
+    
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+/* 
+总结部分样式 */
+.summary-section {
+    margin: 40px 0;
+}
+
+.summary-section h3 {
+    color: #4ECDC4;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.summary-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.summary-icon {
+    font-size: 35px;
+    flex-shrink: 0;
+}
+
+.summary-item p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.summary-item strong {
+    color: #FF6B6B;
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0E5 100%);
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+/* key-point样式（兼容旧的类名） */
+.key-point p strong {
+    color: #FF6B6B;
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0E5 100%);
+    padding: 2px 8px;
+    border-radius: 5px;
+}

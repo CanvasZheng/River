@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索方法 - 多人过河巧安排</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/activity1.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">🚣 多人过河巧安排</h1>
+      
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="activity-header">
+            <h2>🎯 学习活动1：探索问题解决的方法</h2>
+            <div class="problem-desc">
+                <p>一支由<strong>10个成年人</strong>组成的探险队要过河，但船很小，每次最多载<strong>2个少年</strong>或<strong>1个成年人</strong>。</p>
+                <p>这时，他们看到<strong>2个少年</strong>划着1条小船过来，就向少年求助。<span style="color: #D32F2F; font-weight: bold;">（温馨提示：这是为了学习解决问题的方法而设计的情境。在真实生活中，小朋友们划船一定要有大人陪同，注意安全哦！）</span></p>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <h3>🎮 互动游戏：帮助探险队过河</h3>
+            <p class="game-tip">点击人物选择上船，然后点击"过河"按钮。试试看能否让所有人都过河！</p>
+            
+            <div class="game-container">
+                <!-- 游戏场景 -->
+                <div class="game-scene">
+                    <!-- 左岸 -->
+                    <div class="shore-area left-shore">
+                        <div class="shore-bg"></div>
+                        <h4 class="shore-title">左岸</h4>
+                        <div id="leftBank" class="people-container">
+                            <!-- 动态生成人物 -->
+                        </div>
+                    </div>
+
+                    <!-- 河流和船 -->
+                    <div class="river-area">
+                        <div class="river-bg">
+                            <div class="wave-animation"></div>
+                        </div>
+                        
+                        <!-- 船的包装器，用于控制水平位置 -->
+                        <div id="boatWrapper" class="boat-wrapper">
+                            <div id="boat" class="boat-container">
+                                <img src="../images/boat.png" alt="小船" class="boat-img">
+                                <div id="boatPeople" class="boat-people"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 控制按钮 - 放在河流下方 -->
+                        <div class="river-controls">
+                            <button class="control-btn primary" onclick="crossRiver()">
+                                <span class="btn-icon">➡️</span>
+                                <span>过河</span>
+                            </button>
+                            <button class="control-btn secondary" onclick="resetGame()">
+                                <span class="btn-icon">🔄</span>
+                                <span>重新开始</span>
+                            </button>
+                            <button class="control-btn hint" onclick="autoDemo()">
+                                <span class="btn-icon">💡</span>
+                                <span>自动演示</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右岸 -->
+                    <div class="shore-area right-shore">
+                        <div class="shore-bg"></div>
+                        <h4 class="shore-title">右岸</h4>
+                        <div id="rightBank" class="people-container">
+                            <!-- 动态生成人物 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏控制面板 -->
+                <div class="control-panel">
+                    <div class="loop-steps-panel">
+                        <div class="loop-steps">
+                            <span class="loop-step-tag" data-step="1">第1步：2个少年过河</span>
+                            <span class="loop-step-tag" data-step="2">第2步：1个少年回来</span>
+                            <span class="loop-step-tag" data-step="3">第3步：1个成年人过河</span>
+                            <span class="loop-step-tag" data-step="4">第4步：另1个少年回来</span>
+                        </div>
+                        <div id="loopGuide" class="loop-guide">
+                            <p class="loop-guide-text">💡 你发现了吗？每一轮都重复这4步，就能帮助1个成年人过河。</p>
+                        </div>
+                    </div>
+
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">已过河：</span>
+                            <span class="stat-value" id="crossedCount">0</span> / 10人
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">过河次数：</span>
+                            <span class="stat-value" id="tripCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">船的位置：</span>
+                            <span class="stat-value" id="boatPos">左岸</span>
+                        </div>
+                    </div>
+
+                    <div id="gameMessage" class="game-message">
+                        点击人物选择上船，然后点击"过河"按钮
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+      
+
+        <section class="summary-section">
+            <h3>📌 本节总结</h3>
+            <div class="summary-box">
+                <div class="summary-item">
+                    <span class="summary-icon">🔑</span>
+                    <p><strong>问题分解：</strong>把<strong>大问题</strong>（10人过河）分解成<strong>小问题</strong>（1人过河）</p>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-icon">🔑</span>
+                    <p><strong>找到规律：</strong>让1个成年人过河需要<strong>4个步骤</strong>，<strong>重复10次</strong>即可</p>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-icon">🔑</span>
+                    <p><strong>解决方法：</strong>利用<strong>2个少年来回摆渡</strong>，帮助成年人一个一个过河</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2024 小学信息科技课程 | 第24课</p>
+    </footer>
+
+    <script src="../js/activity1.js"></script>
+</body>
+</html>
